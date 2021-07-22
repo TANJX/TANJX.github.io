@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>颜色游戏</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="flex">
+      <div class="color-div ref-color">
+        <div class="color" id="color-1"></div>
+        <div class="sliders">
+          <div class="slider h-slider">
+            <div class="pointer"></div>
+          </div>
+          <div class="slider s-slider">
+            <div class="pointer"></div>
+          </div>
+          <div class="slider l-slider">
+            <div class="pointer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="color-div test-color">
+        <div class="color" id="color-2"></div>
+        <div class="sliders">
+          <div class="slider h-slider">
+            <div class="pointer"></div>
+          </div>
+          <div class="slider s-slider">
+            <div class="pointer"></div>
+          </div>
+          <div class="slider l-slider">
+            <div class="pointer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="selection">
+      <div class="change">
+        <p id="h-change">0</p>
+        <p id="s-change">0</p>
+        <p id="l-change">0</p>
+      </div>
+      <div class="flex">
+        <button id="h-down" class="h">往左</button>
+        <button id="h-up" class="h">往右</button>
+      </div>
+      <div class="flex">
+        <button id="s-down" class="s">饱和度低</button>
+        <button id="s-up" class="s">饱和度高</button>
+      </div>
+      <div class="flex">
+        <button id="l-down" class="l">更暗</button>
+        <button id="l-up" class="l">更亮</button>
+      </div>
+      <div class="flex">
+        <button class="control-btn" id="confirm">确定</button>
+        <button class="control-btn disable" id="next">继续</button>
+      </div>
+    </div>
+    <footer>
+      <p>幻想TANJX</p>
+    </footer>
+  </div>
+  <script src='lib.js'></script>
+  <script src='color.js'></script>
+  <script src="button.js"></script>
+</body>
+
+</html>

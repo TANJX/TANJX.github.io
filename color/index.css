@@ -1,0 +1,148 @@
+* {
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  position: fixed;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+.container {
+  margin: 24px auto;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.color-div {
+  width: 200px;
+  text-align: center;
+  margin: 0 50px;
+}
+
+.color {
+  border-radius: 8px;
+  height: 150px;
+  width: 150px;
+  background-color: black;
+  border: 2px solid #666;
+  margin: 0 auto;
+}
+
+.sliders {
+  margin-top: 30px;
+}
+
+.slider {
+  margin-top: 8px;
+  position: relative;
+  height: 20px;
+  border: 2px solid rgb(228, 228, 228);
+  border-radius: 4px;
+  width: 200px;
+}
+
+.h-slider {
+  background: linear-gradient(90deg, #ef3434, #ef9134, #efef34, #91ef34, #34ef34, #34ef91, #34efef, #3491ef, #3434ef, #9134ef, #ef34ef, #ef3491, #ef3434);
+}
+
+.pointer {
+  position: absolute;
+  height: 24px;
+  width: 8px;
+  border: 2px solid rgb(92, 92, 92);
+  border-radius: 4px;
+  top: -4px;
+  left: 0%;
+  transform: translateX(-4px);
+}
+
+button {
+  height: 50px;
+  width: 100px;
+  background-color: rgb(228, 228, 228);
+  border: none;
+  outline: none;
+}
+
+button.active {
+  background-color: rgb(206, 206, 206);
+}
+
+button.disable {
+  background-color: rgb(172, 172, 172);
+  color: rgb(122, 122, 122)
+}
+
+button.correct {
+  color: rgb(53 173 113);
+  font-weight: bolder;
+}
+
+button.wrong {
+  color: rgb(253, 38, 85);
+}
+
+button.control-btn {
+  margin: 40px 12px 0;
+  height: 30px;
+  width: 70px;
+  border-radius: 4px;
+}
+
+
+.selection {
+  margin-top: 80px;
+  position: relative;
+}
+
+.selection .flex {
+  margin-top: 12px;
+}
+
+.change {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.change {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  transform: translateX(150px);
+  z-index: -1;
+}
+
+.change p {
+  margin-bottom: 40px ;
+}
+
+footer {
+  position: fixed;
+  bottom: 10px;
+  text-align: center;
+  font-size: 0.7rem;
+  color: #999;
+  width: 100%;
+}
+
+
+@media screen and (max-width: 700px) {
+  .color-div {
+    width: 100%;
+    margin: 20px;
+  }
+  .color {
+    width: 100px;
+    height: 100px;
+  }
+  .slider {
+    width: 100%;
+  }
+}
