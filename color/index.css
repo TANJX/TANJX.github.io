@@ -145,4 +145,7 @@ footer {
   .slider {
     width: 100%;
   }
+  .selection {
+    margin-top: 20px;
+  }
 }
