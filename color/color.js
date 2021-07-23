@@ -94,9 +94,9 @@ function updateTestColor() {
   testColorArray = [0, 0, 0];
   testColorDirection = [0, 0, 0];
   const range = levels[diffculty];
-  testColorDirection[0] = randomRange(range[0]/2, range[1]/2);
-  testColorDirection[1] = randomRange(range[0], range[1]);
-  testColorDirection[2] = randomRange(range[0], range[1]);
+  testColorDirection[0] = randomRange2(range[0]/2, range[1]/2);
+  testColorDirection[1] = randomRange2(range[0], range[1]);
+  testColorDirection[2] = randomRange2(range[0], range[1]);
 
   testColorArray[0] = refColorArray[0] + testColorDirection[0];
   if (testColorArray[0] > 1) {
