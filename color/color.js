@@ -1,3 +1,6 @@
+let diffculty = 2;
+const levels = [[0.25, 0.1], [0.15, 0.1], [0.02, 0.1]];
+
 const refColorEl = document.getElementById('color-1');
 const testColorEl = document.getElementById('color-2');
 const sliderEls = Array.from(document.querySelectorAll('.sliders'));
@@ -15,6 +18,7 @@ const lChangeEl = document.getElementById('l-change');
 
 const confirmBtn = document.getElementById('confirm');
 const nextBtn = document.getElementById('next');
+const diffcultySwitch = document.getElementById('diffculty');
 
 let answer = [0, 0, 0];
 
@@ -48,8 +52,26 @@ let testColorArray;
 
 let testColorDirection;
 
+/**
+ * b > a
+ * @param {number} a 
+ * @param {number} b 
+ * @returns {number} random float between a and b
+ */
 function randomRange(a, b) {
   return Math.random() * (b - a) + a;
+}
+
+/**
+ * b > a > 0
+ * @param {number} a 
+ * @param {number} b 
+ * @returns {number} random float between -b to -a or between a and b
+ */
+function randomRange2(a, b) {
+  const n = Math.random() * (b - a) + a;
+  const sign = Math.random() > 0.5 ? 1 : -1;
+  return n * sign;
 }
 
 function arrayToCode(arr) {
@@ -68,13 +90,13 @@ function updateRandomRefColor() {
  * @param   {number}  s       
  * @param   {number}  l       
  */
-function updateTestColor(h, s, l) {
+function updateTestColor() {
   testColorArray = [0, 0, 0];
   testColorDirection = [0, 0, 0];
-
-  testColorDirection[0] = randomRange(-h, h);
-  testColorDirection[1] = randomRange(-s, s);
-  testColorDirection[2] = randomRange(-l, l);
+  const range = levels[diffculty];
+  testColorDirection[0] = randomRange(range[0]/2, range[1]/2);
+  testColorDirection[1] = randomRange(range[0], range[1]);
+  testColorDirection[2] = randomRange(range[0], range[1]);
 
   testColorArray[0] = refColorArray[0] + testColorDirection[0];
   if (testColorArray[0] > 1) {
@@ -115,7 +137,7 @@ function updateSlider() {
 
 function updateElement() {
   updateRandomRefColor();
-  updateTestColor(0.2, 0.2, 0.2);
+  updateTestColor();
   updateSlider();
   refColorEl.style.backgroundColor = arrayToCode(hsvToRgb(...refColorArray));
   testColorEl.style.backgroundColor = arrayToCode(hsvToRgb(...testColorArray));

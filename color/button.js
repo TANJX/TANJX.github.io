@@ -95,7 +95,19 @@ confirmBtn.onclick = function () {
   }
 };
 
-nextBtn.onclick = function() {
+nextBtn.onclick = function () {
   if (nextBtn.classList.contains('disable')) return;
   reset();
+};
+
+diffcultySwitch.onclick = function () {
+  diffculty++;
+  diffculty %= 3;
+  if (diffculty == 0) {
+    diffcultySwitch.textContent = '低';
+  } else if (diffculty == 1) {
+    diffcultySwitch.textContent = '中';
+  } else if (diffculty == 2) {
+    diffcultySwitch.textContent = '高';
+  }
 };
